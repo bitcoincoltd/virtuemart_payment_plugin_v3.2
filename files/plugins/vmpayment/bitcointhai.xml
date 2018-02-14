@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<install version="1.5" type="plugin" group="vmpayment" >
+    <name>CoinPay</name>
+    <creationDate>May 2013</creationDate>
+    <author>David B</author>
+    <authorUrl>https://coinpay.in.th</authorUrl>
+    <copyright>Copyright (C) 2013 Bitcoin Co. Ltd.</copyright>
+    <license>http://www.gnu.org/licenses/gpl-3.0.html GNU/GPL</license>
+    <version>1.0</version>
+    <description><![CDATA[<a href="https://coinpay.in.th" target="_blank">CoinPay.in.th</a> payment plugin for Virtuemart 2]]>
+    </description>
+
+    <files>
+        <filename plugin="bitcointhai">bitcointhai.php</filename>
+        <filename plugin="bitcointhai">bitcointhai.xml</filename>
+    </files>
+
+	
+    <params addpath="/administrator/components/com_virtuemart/elements" >
+        <param type="vmjpluginwarning" />
+        <param   type="spacer" default="VMPAYMENT_BITCOINTHAI_MERCHANT_PARAMS" level="level1" />
+        <param type="text" name="bitcointhai_api_id"  size="40" label="VMPAYMENT_BITCOINTHAI_API_ID" default="" description="VMPAYMENT_BITCOINTHAI_API_ID_DESC" />
+        <param type="text" name="bitcointhai_api_key"  size="40" label="VMPAYMENT_BITCOINTHAI_API_KEY" default="" description="VMPAYMENT_BITCOINTHAI_API_KEY_DESC" />
+
+        <param   type="spacer" default="VMPAYMENT_BITCOINTHAI_STATUSCODES_PARAMS" level="level1" />
+        <param name="status_pending"    type="vmorderstate" scope="com_virtuemart" default="P" label="VMPAYMENT_BITCOINTHAI_STATUS_OPEN" description="VMPAYMENT_BITCOINTHAI_STATUS_OPEN_DESC" />
+        <param name="status_success"    type="vmorderstate" scope="com_virtuemart" default="C" label="VMPAYMENT_BITCOINTHAI_STATUS_OK" description="VMPAYMENT_BITCOINTHAI_STATUS_OK_DESC" />
+
+        <param type="spacer" default="VMPAYMENT_BITCOINTHAI_VIRTUEMART_PARAMS" level="level1" />
+        <param name="payment_logos" type="vmfiles" label="VMPAYMENT_BITCOINTHAI_LOGOS" description="VMPAYMENT_BITCOINTHAI_LOGOS_DESC" directory="/images/stories/virtuemart/payment" default="bitcoin.png" hide_default="1" hide_none="1" stripext="0"   exclude="^_" />
+        <param name="payment_currency" type="vmacceptedcurrency" default="" label="VMPAYMENT_BITCOINTHAI_CURRENCY" description="VMPAYMENT_BITCOINTHAI_CURRENCY_DESC" />
+        <param name="countries" type="vmcountries"  scope="com_virtuemart" default="" label="VMPAYMENT_BITCOINTHAI_COUNTRIES" description="VMPAYMENT_BITCOINTHAI_COUNTRIES_DESC"/>
+        <param name="min_amount" type="text"  label="VMPAYMENT_BITCOINTHAI_MIN_AMOUNT" description="VMPAYMENT_BITCOINTHAI_MIN_AMOUNT_EXPLAIN" />
+        <param name="max_amount" type="text"  label="VMPAYMENT_BITCOINTHAI_MAX_AMOUNT" description="VMPAYMENT_BITCOINTHAI_MAX_AMOUNT_EXPLAIN" />
+    </params>
+
+</install>

@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<extension version="2.6" type="plugin" group="vmpayment" method="upgrade" >
+  <name>VM Payment - BX CoinPay</name>
+  <creationDate>February 2018</creationDate>
+  <author>info@bitcoin.co.th</author>
+  <authorUrl>https://coinpay.co.th</authorUrl>
+  <copyright>Copyright (C) 2013 Bitcoin Co. Ltd.</copyright>
+  <license>http://www.gnu.org/licenses/gpl-3.0.html GNU/GPL</license>
+  <version>2.0.0</version>
+
+  <description>
+    <![CDATA[<a href="https://coinpay.co.th" target="_blank">CoinPay.co.th</a> payment plugin for Virtuemart 3]]>
+  </description>
+
+  <files>
+    <filename plugin="bxcoinpay">bxcoinpay.xml</filename>
+    <filename plugin="bxcoinpay">bxcoinpay.php</filename>
+    <folder>files</folder>
+    <folder>language</folder>
+  </files>
+
+  <params addfieldpath="/administrator/components/com_viruemart/elements">
+    <param type="spacer" default="VMPAYMENT_BXCOINPAY_CREDENTIALS_LABEL" level="level1" />
+    <param name="bxcoinpay_api_id" type="text" label="VMPAYMENT_BXCOINPAY_API_ID" description="VMPAYMENT_BXCOINPAY_API_ID_DESC" />
+    <param name="currency_to" type="text" label="VMPAYMENT_BXCOINPAY_CRYPTOCURRECIES" description="VMPAYMENT_BXCOINPAY_CRYPTOCURRECIES_DESC" />
+
+    <param name="status_pending" type="vmorderstate" scope="com_virtuemart" label="VMPAYMENT_BXCOINPAY_PENDING_STATUS_LABEL" description="VMPAYMENT_BXCOINPAY_PENDING_STATUS_DESCRIPTION" />
+    <param name="status_success" type="vmorderstate" scope="com_virtuemart" label="VMPAYMENT_BXCOINPAY_PAID_STATUS_LABEL" description="VMPAYMENT_BXCOINPAY_PAID_STATUS_DESCRIPTION" />
+  </params>
+
+  <config>
+    <fields name="params">
+      <fieldset name="basic" addfieldpath="/administrator/components/com_viruemart/elements">
+        <field type="spacer" default="VMPAYMENT_BXCOINPAY_LABEL" level="level1" />
+        <field name="bxcoinpay_api_id" type="text" label="VMPAYMENT_BXCOINPAY_API_ID" description="VMPAYMENT_BXCOINPAY_API_ID_DESC" />
+        <field name="currency_to" type="text" label="VMPAYMENT_BXCOINPAY_CRYPTOCURRECIES" description="VMPAYMENT_BXCOINPAY_CRYPTOCURRECIES_DESC" />
+
+        <field name="status_pending" type="vmorderstate" scope="com_virtuemart" label="VMPAYMENT_BXCOINPAY_PENDING_STATUS_LABEL" description="VMPAYMENT_BXCOINPAY_PENDING_STATUS_DESCRIPTION" />
+        <field name="status_success" type="vmorderstate" scope="com_virtuemart" label="VMPAYMENT_BXCOINPAY_PAID_STATUS_LABEL" description="VMPAYMENT_BXCOINPAY_PAID_STATUS_DESCRIPTION" />
+
+      </fieldset>
+    </fields>
+  </config>
+
+</extension>
