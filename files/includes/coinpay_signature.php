@@ -16,9 +16,6 @@ class CoinpaySignature
      */
     public function sign($data)
     {
-        //throw_if(isset($params['signature']), new \Exception("Can't sign! Already signed!"));
-        //$data["signature"] = $this->generate($data);
-        //return $data;
       throw new Exception("Not implemented yet!");
     }
 
@@ -31,14 +28,19 @@ class CoinpaySignature
     {
         $data['secret'] = $this->secret;
         // sort to have always the same order in signature.
-        $data = array_walk_recursive($data, function($item) {
-          if (is_array($item)) {
-            return ksort($item);
-          }
-          return $item;
-        });
+        $this->ksortRecursive($data);
+
         $signable_string = json_encode($data);
         return sha1($signable_string);
+    }
+
+    public function ksortRecursive(&$array)
+    {
+      if (!is_array($array)) return;
+      ksort($array);
+      foreach ($array as &$arr) {
+        $this->ksortRecursive($arr);
+      }
     }
 
     public function check($data)
